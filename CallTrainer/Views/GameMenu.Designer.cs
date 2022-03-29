@@ -100,7 +100,7 @@ namespace CallTrainer.Views
             this.button_Statistiks.Name = "button_Statistiks";
             this.button_Statistiks.Size = new System.Drawing.Size(188, 77);
             this.button_Statistiks.TabIndex = 2;
-            this.button_Statistiks.Text = "WIP";
+            this.button_Statistiks.Text = "Statistiks";
             this.button_Statistiks.UseVisualStyleBackColor = true;
             this.button_Statistiks.Click += new System.EventHandler(this.button_Statistiks_Click);
             // 

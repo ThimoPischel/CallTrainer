@@ -46,7 +46,7 @@ namespace CallTrainer.Views
 
         private void button_Statistiks_Click(object sender, EventArgs e)
         {
-
+            SA.main.ShowStatistiks();
         }
 
         private void comboBox_SelectedIndexChanged(object sender, EventArgs e)

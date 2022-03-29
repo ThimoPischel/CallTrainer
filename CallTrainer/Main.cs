@@ -47,6 +47,11 @@ namespace CallTrainer
             ShowPanel(SA.menu);    
         }
 
+        public void ShowStatistiks()
+        {
+            ShowPanel(new Statistik());
+        }
+
         private void ShowPanel(Control control)
         {
             mainpanel.Controls.Clear();

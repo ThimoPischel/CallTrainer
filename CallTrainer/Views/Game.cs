@@ -145,7 +145,7 @@ namespace CallTrainer.Views
                             do
                             {
                                 randomCall = callPool[rnd.Next(0,callPool.Count)];
-                            } while(tmp.calls[b,tmp.correct[b]].ToLower() != randomCall.ToLower());
+                            } while(tmp.calls[b,tmp.correct[b]].ToLower() == randomCall.ToLower());
                             tmp.calls[b,i] = randomCall;
                         }                            
                     }

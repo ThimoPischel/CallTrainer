@@ -69,6 +69,8 @@ namespace CallTrainer.Services
             #endif
         }
 
+        
+
         public void New_Score(int score)
         {
             data.scores.Add(score);
@@ -135,7 +137,11 @@ namespace CallTrainer.Services
             return new Tuple<int,int>(c,f);
         }
 
-
+        public bool[] Call_Last_Correct(string name)
+        {
+            Check_Name(name);
+            return data.last[name].ToArray();
+        }
         public float Call_Percent(string name)
         {
             Check_Name(name);
@@ -192,6 +198,11 @@ namespace CallTrainer.Services
                 data.failes.Add(name, 0);
             if (!data.last.ContainsKey(name))
                 data.last.Add(name, new Queue<bool>());
+        }
+
+        public string[] AllCalls()
+        {
+            return data.last.Keys.ToArray();
         }
 
         #region Crypto

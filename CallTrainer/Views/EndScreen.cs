@@ -16,6 +16,7 @@ namespace CallTrainer.Views
         public EndScreen()
         {
             InitializeComponent();
+            this.Dock = DockStyle.Fill;
             groupBox_result.Text = "Result " + SA.currentName;
             Highscore hs = new Highscore(SA.currentName);
             groupBox_cl.Text = groupBox_pl.Text  = "LAST " + Highscore.tracking.ToString();
@@ -95,12 +96,12 @@ namespace CallTrainer.Views
 
         private string CallNameBuilder(Game.Card card)
         {
-            string result = "";
+            string result = " -> ";
             for(int i = 0; i < card.correct.Length; i++)
             {
-                result += card.calls[i,card.correct[i]] + " ";
+                result += card.calls[i,card.correct[i]] + " -> ";
             }
-            return result.Trim();
+            return result.Trim(" -> ".ToCharArray());
         }
 
         private void button_restart_Click(object sender, EventArgs e)

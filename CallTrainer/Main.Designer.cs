@@ -40,14 +40,14 @@ namespace CallTrainer
             this.mainpanel.Size = new System.Drawing.Size(787, 531);
             this.mainpanel.TabIndex = 0;
             // 
-            // MainWindow
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(49)))), ((int)(((byte)(59)))));
+            this.BackColor = System.Drawing.Color.Silver;
             this.ClientSize = new System.Drawing.Size(787, 531);
             this.Controls.Add(this.mainpanel);
-            this.Name = "MainWindow";
+            this.Name = "Main";
             this.Text = "Call Trainer";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.ResumeLayout(false);
