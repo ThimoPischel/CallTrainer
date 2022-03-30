@@ -135,23 +135,33 @@ namespace CallTrainer.Views
                             tmp.calls[b,i] = values[b+1].Trim();
                             break;
                         }
+                }                
+                cards.Add(tmp);
+            }
 
+            foreach(var c in cards)
+            {
+                string[] correct = new string[c.correct.Length];
+                for(int i = 0; i < correct.Length; i++)
+                {
+                    correct[i] = c.calls[i,c.correct[i]].ToLower();
+                }
 
-                    for(int i = 0; i < 4; i++)
+                for(int i = 0; i < c.correct.Length; i++)
+                {
+                    for(int j = 0; j < 4; j++)
                     {
-                        if(i != tmp.correct[b])
+                        if(j == c.correct[i])
+                            continue;
+
+                        string randomCall = "";
+                        do
                         {
-                            string randomCall = "";
-                            do
-                            {
-                                randomCall = callPool[rnd.Next(0,callPool.Count)];
-                            } while(tmp.calls[b,tmp.correct[b]].ToLower() == randomCall.ToLower());
-                            tmp.calls[b,i] = randomCall;
-                        }                            
+                            randomCall = callPool[rnd.Next(0, callPool.Count)];
+                        } while (correct.Contains(randomCall.ToLower()));
+                        c.calls[i,j] = randomCall;
                     }
                 }
-                
-                cards.Add(tmp);
             }
 #if !DEBUG
             }

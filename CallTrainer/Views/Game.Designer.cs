@@ -123,24 +123,26 @@ namespace CallTrainer.Views
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.LightGreen;
             this.button2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button2.Location = new System.Drawing.Point(457, 3);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(194, 59);
             this.button2.TabIndex = 1;
             this.button2.Text = "Correct";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
+            this.button3.BackColor = System.Drawing.Color.DarkRed;
             this.button3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button3.Location = new System.Drawing.Point(257, 68);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(194, 60);
             this.button3.TabIndex = 2;
             this.button3.Text = "False";
-            this.button3.UseVisualStyleBackColor = true;
+            this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
