@@ -34,7 +34,7 @@ namespace CallTrainer.Views
             }
             catch
             {
-                MessageBox.Show("No \"Calls\" Folder @:\n"+callsFolder);
+                MessageBox.Show("No \"Calls\" Folder @:\n"+callsFolder+"\n");
                 Application.Exit();
             }
         }

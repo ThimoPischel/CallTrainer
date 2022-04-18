@@ -23,7 +23,7 @@ namespace CallTrainer.Views
         private const int pointReduktion = 75;
         private const int pointMinus = -500;
         private const int pointFail = 1000;
-        private const int pauseTime = 800;
+        private const int pauseTime = 1200;
 
         public class Card
         {
@@ -85,7 +85,7 @@ namespace CallTrainer.Views
                 return;
             }
 
-#if !DEBUG
+#if false
             try
             {
 #endif            
@@ -163,7 +163,7 @@ namespace CallTrainer.Views
                     }
                 }
             }
-#if !DEBUG
+#if false
             }
             catch
             {

@@ -12,7 +12,7 @@ namespace CallTrainer
         #if DEBUG
         public static readonly string rootFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),"CallTrainer");
         #else
-        public static readonly string rootFolder = System.Reflection.Assembly.GetExecutingAssembly().Location;
+        public static readonly string rootFolder = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
         #endif
 
         public const string HighscoreFolderName = "Highscores";

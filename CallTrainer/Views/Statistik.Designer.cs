@@ -64,13 +64,6 @@ namespace CallTrainer.Views
             this.osmin = new System.Windows.Forms.Label();
             this.label43 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.lcp = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.lcf = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lcc = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lsinglep = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -93,6 +86,13 @@ namespace CallTrainer.Views
             this.comboBox_CallGroup = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lcp = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lcf = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.lcc = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -104,9 +104,9 @@ namespace CallTrainer.Views
             this.groupBox8.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -186,6 +186,7 @@ namespace CallTrainer.Views
             this.perfekt.Name = "perfekt";
             this.perfekt.Size = new System.Drawing.Size(246, 109);
             this.perfekt.TabIndex = 0;
+            this.perfekt.SelectedIndexChanged += new System.EventHandler(this.perfekt_SelectedIndexChanged);
             // 
             // groupBox11
             // 
@@ -205,6 +206,7 @@ namespace CallTrainer.Views
             this.need.Name = "need";
             this.need.Size = new System.Drawing.Size(246, 109);
             this.need.TabIndex = 0;
+            this.need.SelectedIndexChanged += new System.EventHandler(this.need_SelectedIndexChanged);
             // 
             // groupBox10
             // 
@@ -224,6 +226,7 @@ namespace CallTrainer.Views
             this.bad.Name = "bad";
             this.bad.Size = new System.Drawing.Size(246, 109);
             this.bad.TabIndex = 0;
+            this.bad.SelectedIndexChanged += new System.EventHandler(this.bad_SelectedIndexChanged);
             // 
             // groupBox6
             // 
@@ -478,75 +481,6 @@ namespace CallTrainer.Views
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "LAST X";
             // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.lcp);
-            this.groupBox4.Controls.Add(this.label13);
-            this.groupBox4.Controls.Add(this.lcf);
-            this.groupBox4.Controls.Add(this.label15);
-            this.groupBox4.Controls.Add(this.lcc);
-            this.groupBox4.Location = new System.Drawing.Point(228, 19);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(183, 65);
-            this.groupBox4.TabIndex = 14;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Correct and False";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(53, 42);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 13;
-            this.label11.Text = "Correct";
-            // 
-            // lcp
-            // 
-            this.lcp.AutoSize = true;
-            this.lcp.Location = new System.Drawing.Point(6, 42);
-            this.lcp.Name = "lcp";
-            this.lcp.Size = new System.Drawing.Size(41, 13);
-            this.lcp.TabIndex = 12;
-            this.lcp.Text = "Correct";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(53, 29);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(41, 13);
-            this.label13.TabIndex = 11;
-            this.label13.Text = "Correct";
-            // 
-            // lcf
-            // 
-            this.lcf.AutoSize = true;
-            this.lcf.Location = new System.Drawing.Point(6, 29);
-            this.lcf.Name = "lcf";
-            this.lcf.Size = new System.Drawing.Size(32, 13);
-            this.lcf.TabIndex = 10;
-            this.lcf.Text = "False";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(53, 16);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(41, 13);
-            this.label15.TabIndex = 9;
-            this.label15.Text = "Correct";
-            // 
-            // lcc
-            // 
-            this.lcc.AutoSize = true;
-            this.lcc.Location = new System.Drawing.Point(6, 16);
-            this.lcc.Name = "lcc";
-            this.lcc.Size = new System.Drawing.Size(41, 13);
-            this.lcc.TabIndex = 8;
-            this.lcc.Text = "Correct";
-            // 
             // groupBox5
             // 
             this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -627,9 +561,9 @@ namespace CallTrainer.Views
             this.lsingleo.AutoSize = true;
             this.lsingleo.Location = new System.Drawing.Point(116, 48);
             this.lsingleo.Name = "lsingleo";
-            this.lsingleo.Size = new System.Drawing.Size(55, 13);
+            this.lsingleo.Size = new System.Drawing.Size(94, 13);
             this.lsingleo.TabIndex = 5;
-            this.lsingleo.Text = "01011101";
+            this.lsingleo.Text = "0 0 0 0 0 0 0 0 0 0";
             // 
             // label3
             // 
@@ -745,6 +679,75 @@ namespace CallTrainer.Views
             this.comboBox_CallGroup.TabIndex = 0;
             this.comboBox_CallGroup.SelectionChangeCommitted += new System.EventHandler(this.comboBox_CallGroup_SelectionChangeCommitted);
             // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.lcp);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.lcf);
+            this.groupBox4.Controls.Add(this.label9);
+            this.groupBox4.Controls.Add(this.lcc);
+            this.groupBox4.Controls.Add(this.label12);
+            this.groupBox4.Location = new System.Drawing.Point(228, 19);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(183, 65);
+            this.groupBox4.TabIndex = 15;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Correct and False";
+            // 
+            // lcp
+            // 
+            this.lcp.AutoSize = true;
+            this.lcp.Location = new System.Drawing.Point(53, 42);
+            this.lcp.Name = "lcp";
+            this.lcp.Size = new System.Drawing.Size(41, 13);
+            this.lcp.TabIndex = 13;
+            this.lcp.Text = "Correct";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 42);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(41, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Correct";
+            // 
+            // lcf
+            // 
+            this.lcf.AutoSize = true;
+            this.lcf.Location = new System.Drawing.Point(53, 29);
+            this.lcf.Name = "lcf";
+            this.lcf.Size = new System.Drawing.Size(41, 13);
+            this.lcf.TabIndex = 11;
+            this.lcf.Text = "Correct";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 29);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(32, 13);
+            this.label9.TabIndex = 10;
+            this.label9.Text = "False";
+            // 
+            // lcc
+            // 
+            this.lcc.AutoSize = true;
+            this.lcc.Location = new System.Drawing.Point(53, 16);
+            this.lcc.Name = "lcc";
+            this.lcc.Size = new System.Drawing.Size(41, 13);
+            this.lcc.TabIndex = 9;
+            this.lcc.Text = "Correct";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 16);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 13);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "Correct";
+            // 
             // Statistik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -767,12 +770,12 @@ namespace CallTrainer.Views
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -822,13 +825,6 @@ namespace CallTrainer.Views
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label osmin;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label lcp;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label lcf;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label lcc;
         private System.Windows.Forms.Label lsinglep;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lsinglef;
@@ -843,5 +839,12 @@ namespace CallTrainer.Views
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label lsmin;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label lcp;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lcf;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lcc;
+        private System.Windows.Forms.Label label12;
     }
 }

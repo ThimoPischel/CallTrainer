@@ -17,6 +17,7 @@ namespace CallTrainer.Views
         private Dictionary<string,Highscore> highscores;
         private string name;
         private string[] calls;
+        private bool stopEvents = false;
 
         public Statistik()
         {
@@ -130,7 +131,7 @@ namespace CallTrainer.Views
                 var cf = highscores[name].Call_Last_Correct_Failes_Ammount(call);
                 lsinglec.Text = cf.Item1.ToString();
                 lsinglef.Text = cf.Item2.ToString();
-                lsinglep.Text = ((float)cf.Item1 / (float)(cf.Item1 + cf.Item2)).ToString();
+                lsinglep.Text = ((float)cf.Item1 / (float)(cf.Item1 + cf.Item2)).ToString(CSD.PercentFormat);
 
                 bool[] order = highscores[name].Call_Last_Correct(call);
                 string o = "";
@@ -150,13 +151,66 @@ namespace CallTrainer.Views
                 var cf = highscores[name].Call_Correct_Failes_Ammount(call);
                 osinglec.Text = cf.Item1.ToString();
                 osinglef.Text = cf.Item2.ToString();
-                osinglep.Text = ((float)cf.Item1 / (float)(cf.Item1 + cf.Item2)).ToString();
+                osinglep.Text = ((float)cf.Item1 / (float)(cf.Item1 + cf.Item2)).ToString(CSD.PercentFormat);
             }
         }
 
         private void backToMenu_Click(object sender, EventArgs e)
         {
             SA.main.BackToMenu();
+        }
+
+        private void bad_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(stopEvents)
+                return;
+            SelectCall((string)bad.SelectedItem);
+        }
+
+        private void need_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (stopEvents)
+                return;
+            SelectCall((string)need.SelectedItem);
+        }
+
+        private void perfekt_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (stopEvents)
+                return;
+            SelectCall((string)perfekt.SelectedItem);
+        }
+
+        private void SelectCall(string callname)
+        {
+            if(callname == null)
+                return;
+
+            stopEvents = true;
+
+            ListBox[] lists = new ListBox[]
+            {
+                bad,
+                need,
+                perfekt
+            };
+
+            foreach(var list in lists)
+            {
+                if(list.Items.Contains(callname))
+                {
+                    list.SelectedItem = callname;                    
+                }
+                else
+                {
+                    list.SelectedItem = null;
+                }
+            }
+
+            comboBox_LastSingleCall.SelectedItem = callname;
+            comboBox_OverallSingleCall.SelectedItem = callname;
+
+            stopEvents = false;
         }
     }
 }
